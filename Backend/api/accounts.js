@@ -8,9 +8,17 @@ router.post('/signup', async (req, res) => {
     if (!email || !name || !password) {
         res.status(400).json({ error: 'Invalid input' });
     } else {
-        const newUser = await User.create(user);
-        res.status(200).json({ newUser });
+        User.find({ 'email': email }, async function(err, existingUser) {
+            if (existingUser != null) {
+                res.status(400).json({ error: 'Email already exists' });
+            } else {
+                const newUser = await User.create(user);
+                res.status(200).json({ newUser });
+            }
+        });
     }
 });
+
+
 
 module.exports = router;
