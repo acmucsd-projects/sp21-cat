@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const BuyerSchema = require('./buyer');
+const BidSchema = require('./bid');
 
 const ListingSchema = new mongoose.Schema(
     {
@@ -31,8 +31,8 @@ const ListingSchema = new mongoose.Schema(
             type: [String],
             required: false,
         },
-        buyers: {
-            type: [BuyerSchema],
+        bids: {
+            type: [BidSchema],
             required: false,
         }*/
     

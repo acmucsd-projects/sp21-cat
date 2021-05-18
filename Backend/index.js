@@ -1,7 +1,8 @@
 const express = require('express');
 const config = require('./config');
 const cors = require('cors');
-const router = require('./api');
+const listingRouter = require('./api/listing');
+const signupRouter = require('./api/signup');
 const server = express();
 const mongoose = require('mongoose');
 
@@ -9,7 +10,8 @@ server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
-server.use('/api', router);
+server.use('/listing', listingRouter);
+server.use('/signup', signupRouter);
 
 mongoose.connect(config.databaseUrl, {
     useNewUrlParser: true,

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const BuyerSchema = new mongoose.Schema(
+const BidSchema = new mongoose.Schema(
     {
         name: {
             type: String,
@@ -17,4 +17,5 @@ const BuyerSchema = new mongoose.Schema(
     }
 )
 
-module.exports = BuyerSchema;
+const Bid = mongoose.model('Bid', BidSchema);
+module.exports = Bid;
