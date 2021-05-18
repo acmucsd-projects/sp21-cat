@@ -3,11 +3,7 @@ const BuyerSchema = require('./buyer');
 
 const ListingSchema = new mongoose.Schema(
     {
-        name: {
-            type: String
-        }
-        
-    /*    item_name: {
+        item_name: {
             type: String,
             required: true,
         },
@@ -23,23 +19,23 @@ const ListingSchema = new mongoose.Schema(
             type: Boolean,
             required: true,
         },
-        categories: {
+        /*categories: {
             type: [String],
             required: false,
-        },
+        },*/
         description: {
             type: String,
             required: true,
         },
-        images: {
+        /*images: {
             type: [String],
             required: false,
         },
         buyers: {
             type: [BuyerSchema],
             required: false,
-        }
-    */
+        }*/
+    
     }
 )
 
