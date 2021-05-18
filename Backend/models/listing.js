@@ -7,7 +7,11 @@ const ListingSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        seller: {
+        sellerEmail: {
+            type: String,
+            required: true,
+        },
+        sellerName: {
             type: String,
             required: true,
         },
@@ -19,10 +23,10 @@ const ListingSchema = new mongoose.Schema(
             type: Boolean,
             required: true,
         },
-        /*categories: {
+        categories: {
             type: [String],
             required: false,
-        },*/
+        },
         description: {
             type: String,
             required: true,
