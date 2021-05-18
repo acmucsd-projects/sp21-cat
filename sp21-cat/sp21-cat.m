@@ -6,3 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ShopViewController.h"
+#import "MyListViewController.h"
+#import "NotifsViewController.h"
+#import "ProfileViewController.h"
+#import "DetailsViewController.h"
+#import "MarkViewController.h"

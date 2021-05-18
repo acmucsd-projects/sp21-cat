@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		747AB0B3265251DE002EE73E /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 747AB0A1265251DE002EE73E /* Lato-Black.ttf */; };
+		749918F32652600500FF0D22 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749918F22652600500FF0D22 /* Lato-Regular.ttf */; };
+		749918F52652601B00FF0D22 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749918F42652601B00FF0D22 /* Lato-Thin.ttf */; };
+		749918F92652FC8800FF0D22 /* Lato-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749918F82652FC8800FF0D22 /* Lato-RegularItalic.ttf */; };
+		749918FB2653156000FF0D22 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749918FA2653156000FF0D22 /* ShopViewController.m */; };
+		7499190026532E1A00FF0D22 /* MyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749918FF26532E1A00FF0D22 /* MyListViewController.m */; };
+		74991903265330BA00FF0D22 /* NotifsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74991902265330BA00FF0D22 /* NotifsViewController.m */; };
+		749919062653315000FF0D22 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749919052653315000FF0D22 /* ProfileViewController.m */; };
+		7499190C2653322900FF0D22 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7499190B2653322900FF0D22 /* DetailsViewController.m */; };
+		7499190F265332E200FF0D22 /* MarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7499190E265332E200FF0D22 /* MarkViewController.m */; };
+		7499191126535B5500FF0D22 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7499191026535B5500FF0D22 /* image.jpg */; };
 		74DC19B32634A05F00F0D79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B22634A05F00F0D79E /* AppDelegate.swift */; };
 		74DC19B52634A05F00F0D79E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B42634A05F00F0D79E /* SceneDelegate.swift */; };
 		74DC19B72634A05F00F0D79E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B62634A05F00F0D79E /* ViewController.swift */; };
@@ -36,6 +47,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		747AB0A1265251DE002EE73E /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		749918F22652600500FF0D22 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../../../Downloads/Lato2OFL/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		749918F42652601B00FF0D22 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Thin.ttf"; path = "../../../../../Downloads/Lato2OFL/Lato-Thin.ttf"; sourceTree = "<group>"; };
+		749918F82652FC8800FF0D22 /* Lato-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-RegularItalic.ttf"; sourceTree = "<group>"; };
+		749918FA2653156000FF0D22 /* ShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		749918FC265315DC00FF0D22 /* ShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		749918FF26532E1A00FF0D22 /* MyListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyListViewController.m; sourceTree = "<group>"; };
+		7499190126532E7600FF0D22 /* MyListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyListViewController.h; sourceTree = "<group>"; };
+		74991902265330BA00FF0D22 /* NotifsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifsViewController.m; sourceTree = "<group>"; };
+		74991904265330D600FF0D22 /* NotifsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifsViewController.h; sourceTree = "<group>"; };
+		749919052653315000FF0D22 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		749919072653316800FF0D22 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		7499190A2653321300FF0D22 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		7499190B2653322900FF0D22 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		7499190D265332BB00FF0D22 /* MarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkViewController.h; sourceTree = "<group>"; };
+		7499190E265332E200FF0D22 /* MarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkViewController.m; sourceTree = "<group>"; };
+		7499191026535B5500FF0D22 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		74DC19AF2634A05F00F0D79E /* sp21-cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sp21-cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DC19B22634A05F00F0D79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74DC19B42634A05F00F0D79E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +108,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		747AB095265250C9002EE73E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				749918F82652FC8800FF0D22 /* Lato-RegularItalic.ttf */,
+				749918F42652601B00FF0D22 /* Lato-Thin.ttf */,
+				747AB0A1265251DE002EE73E /* Lato-Black.ttf */,
+				749918F22652600500FF0D22 /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		74DC19A62634A05F00F0D79E = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +143,24 @@
 		74DC19B12634A05F00F0D79E /* sp21-cat */ = {
 			isa = PBXGroup;
 			children = (
+				747AB095265250C9002EE73E /* Fonts */,
 				74DC19B22634A05F00F0D79E /* AppDelegate.swift */,
 				74DC19B42634A05F00F0D79E /* SceneDelegate.swift */,
+				7499191026535B5500FF0D22 /* image.jpg */,
 				74DC19B62634A05F00F0D79E /* ViewController.swift */,
 				74DC19B82634A05F00F0D79E /* Main.storyboard */,
+				7499190E265332E200FF0D22 /* MarkViewController.m */,
+				7499190D265332BB00FF0D22 /* MarkViewController.h */,
+				7499190B2653322900FF0D22 /* DetailsViewController.m */,
+				7499190A2653321300FF0D22 /* DetailsViewController.h */,
+				749919052653315000FF0D22 /* ProfileViewController.m */,
+				749919072653316800FF0D22 /* ProfileViewController.h */,
+				74991902265330BA00FF0D22 /* NotifsViewController.m */,
+				74991904265330D600FF0D22 /* NotifsViewController.h */,
+				749918FF26532E1A00FF0D22 /* MyListViewController.m */,
+				7499190126532E7600FF0D22 /* MyListViewController.h */,
+				749918FA2653156000FF0D22 /* ShopViewController.m */,
+				749918FC265315DC00FF0D22 /* ShopViewController.h */,
 				74DC19E72634A2A000F0D79E /* sp21-cat.m */,
 				74DC19BB2634A06100F0D79E /* Assets.xcassets */,
 				74DC19BD2634A06100F0D79E /* LaunchScreen.storyboard */,
@@ -240,8 +293,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				74DC19BF2634A06100F0D79E /* LaunchScreen.storyboard in Resources */,
+				749918F52652601B00FF0D22 /* Lato-Thin.ttf in Resources */,
 				74DC19BC2634A06100F0D79E /* Assets.xcassets in Resources */,
+				749918F32652600500FF0D22 /* Lato-Regular.ttf in Resources */,
 				74DC19BA2634A05F00F0D79E /* Main.storyboard in Resources */,
+				747AB0B3265251DE002EE73E /* Lato-Black.ttf in Resources */,
+				7499191126535B5500FF0D22 /* image.jpg in Resources */,
+				749918F92652FC8800FF0D22 /* Lato-RegularItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,8 +325,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				74DC19E82634A2A000F0D79E /* sp21-cat.m in Sources */,
+				7499190F265332E200FF0D22 /* MarkViewController.m in Sources */,
 				74DC19B72634A05F00F0D79E /* ViewController.swift in Sources */,
+				749919062653315000FF0D22 /* ProfileViewController.m in Sources */,
+				74991903265330BA00FF0D22 /* NotifsViewController.m in Sources */,
 				74DC19B32634A05F00F0D79E /* AppDelegate.swift in Sources */,
+				749918FB2653156000FF0D22 /* ShopViewController.m in Sources */,
+				7499190C2653322900FF0D22 /* DetailsViewController.m in Sources */,
+				7499190026532E1A00FF0D22 /* MyListViewController.m in Sources */,
 				74DC19B52634A05F00F0D79E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +512,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "sp21-cat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +534,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "sp21-cat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
