@@ -50,4 +50,24 @@ router.post('/', async (req, res) => {
     
 });
 
+router.put('/:listing_id', async (req, res) => {
+    const { listing } = req.body;
+    const { item_name, sellerName, price, highest_bid, description } = listing;
+
+    if (!item_name || !sellerName || !price || !highest_bid || !description) {
+        return res.status(400).json({ error: 'Invalid input' });
+    }
+
+    const existingListing = User.findById(req.params.user_id);
+    if (existingListing) {
+        existingListing.item_name = item_name;
+        existingListing.sellerName = sellerName;
+        existingListing.price = price;
+        existingListing.highest_bid = highest_bid;
+        existingListing.description = description;
+        existingListing.save();
+        res.status(200).json({ message: 'User updated successfully', existingListing });
+    }
+});
+
 module.exports = router;

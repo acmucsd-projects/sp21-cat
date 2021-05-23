@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json({ error: 'User does not exist' });
 });
 
-router.post('/edit', async (req, res) => {
+router.put('/', async (req, res) => {
     const { user } = req.body;
     if (!user.email || !user.name || !user.password) {
         return res.status(400).json({ error: 'Invalid input' });
