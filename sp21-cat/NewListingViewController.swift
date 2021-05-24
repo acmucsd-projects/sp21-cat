@@ -10,10 +10,12 @@ import UIKit
 class NewListingViewController: UIViewController {
 
     @IBOutlet weak var closePage_btn: UIButton!
+    
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var startingPrice: UITextField!
     @IBOutlet weak var hideBid_switch: UISwitch!
     @IBOutlet weak var item_descriptions: UITextView!
+    
     @IBOutlet weak var photo1_btn: UIButton!
     @IBOutlet weak var photo2_btn: UIButton!
     @IBOutlet weak var photo3_btn: UIButton!
@@ -31,6 +33,9 @@ class NewListingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        cate1.layer.cornerRadius = 20;
+//        view.layer.borderWidth = 1
+//        view.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
     }
     
 
