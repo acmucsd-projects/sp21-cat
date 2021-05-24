@@ -5,41 +5,52 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     const listing = await Listing.find().exec();
-    res.status(200).json({ listing });
+    return res.status(200).json({ listing });
 });
 
-router.get('/:sellerEmail', async (req, res) => {
-    const { sellerEmail } = req.params;
-    if (!sellerEmail) {
+router.get('/:listing_id', async (req, res) => {
+    const { listing_id } = req.params;
+    if (!listing_id) {
         return res.status(400).json({ error: 'Invalid parameter' });
     }
 
-    const existingUser = await User.findOne({ email: sellerEmail }); 
-    if (!existingUser) {
+    const listing = await Listing.findById(req.params.listing_id);
+    if (!listing) {
+        return res.status(400).json({ error: 'Listing does not exist' });
+    }
+
+    return res.status(200).json({ listing });
+});
+
+router.get('/seller/:seller_id', async (req, res) => {
+    const { seller_id } = req.params;
+    if (!seller_id) {
+        return res.status(400).json({ error: 'Invalid parameter' });
+    }
+
+    const user = await User.findById(seller_id);
+    if (!user) {
         return res.status(400).json({ error: 'User does not exist' });
     }
 
-    await Listing.find({ sellerEmail: sellerEmail }, function(err, listings) {
-        if (err) {
-            return res.status(400).json({ error: 'An error has occurred' });
-        }
-        if (!listings || listings.length == 0) {
-            return res.status(200).json({ message: 'User does not have any listings' });
-        }
-        res.status(200).json({ listings });
-    }); 
+    const listing = await Listing.find({ seller_id: seller_id });
+    if (!listing || listing.length === 0) {
+        return res.status(200).json({ message: 'User does not have any listings' });
+    }
+    
+    return res.status(200).json({ listing });
 });
 
 router.post('/', async (req, res) => {
     const { listing } = req.body;
-    const { item_name, sellerName, price, highest_bid, description } = listing;
+    const { item_name, seller_id, price, highest_bid, description } = listing;
 
-    if (!item_name || !sellerName || !price || !highest_bid || !description) {
+    if (!item_name || !seller_id || !price || !highest_bid || !description) {
         return res.status(400).json({ error: 'Invalid input' });
     }
 
     const newListing = await Listing.create(listing);
-    res.status(200).json({ newListing });
+    return res.status(200).json({ newListing });
 
     // req.file --> has file 
     // frontend sends request with multi part form data as content type
@@ -51,23 +62,45 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:listing_id', async (req, res) => {
-    const { listing } = req.body;
-    const { item_name, sellerName, price, highest_bid, description } = listing;
+    const { listing_id } = req.params;
+    if (!listing_id) {
+        return res.status(400).json({ error: 'Invalid parameter' });
+    }
 
-    if (!item_name || !sellerName || !price || !highest_bid || !description) {
+    const { listing } = req.body;
+    const { item_name, seller_id, price, highest_bid, description } = listing;
+
+    if (!item_name || !seller_id || !price || !highest_bid || !description) {
         return res.status(400).json({ error: 'Invalid input' });
     }
 
-    const existingListing = User.findById(req.params.user_id);
-    if (existingListing) {
-        existingListing.item_name = item_name;
-        existingListing.sellerName = sellerName;
-        existingListing.price = price;
-        existingListing.highest_bid = highest_bid;
-        existingListing.description = description;
-        existingListing.save();
-        res.status(200).json({ message: 'User updated successfully', existingListing });
+    const existingListing = await Listing.findById(req.params.listing_id);
+    if (!existingListing) {
+        return res.status(400).json({ error: 'Listing does not exist' });
     }
+
+    existingListing.item_name = item_name;
+    existingListing.seller_id = seller_id;
+    existingListing.price = price;
+    existingListing.highest_bid = highest_bid;
+    existingListing.description = description;
+    existingListing.save();
+    return res.status(200).json({ message: 'Listing updated successfully' });
+});
+
+router.delete('/:listing_id', async (req, res) => {
+    const { listing_id } = req.params;
+    if (!listing_id) {
+        return res.status(400).json({ error: 'Invalid parameter' });
+    }
+
+    const existingListing = await Listing.findById(req.params.listing_id);
+    if (!existingListing) {
+        return res.status(400).json({ error: 'Listing does not exist' });
+    }
+
+    await Listing.deleteMany({ _id: listing_id });
+    return res.status(200).json({ message: 'Listing deleted successfully' });
 });
 
 module.exports = router;

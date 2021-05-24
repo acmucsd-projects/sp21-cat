@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const BidSchema = require('./bid');
+const ObjectId = require('mongodb').ObjectID;
+const BidSchema = require('./bid').schema;
 
 const ListingSchema = new mongoose.Schema(
     {
@@ -7,13 +8,10 @@ const ListingSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        sellerEmail: {
-            type: String,
+        seller_id: {
+            type: ObjectId,
             required: true,
-        },
-        sellerName: {
-            type: String,
-            required: true,
+            ref: 'User',
         },
         price: {
             type: Number,
@@ -34,11 +32,11 @@ const ListingSchema = new mongoose.Schema(
         /*images: {
             type: [String],
             required: false,
-        },
+        },*/
         bids: {
             type: [BidSchema],
             required: false,
-        }*/
+        }
     
     }
 )
