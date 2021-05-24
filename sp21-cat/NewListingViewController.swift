@@ -34,6 +34,8 @@ class NewListingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         cate1.layer.cornerRadius = 20;
+        item_descriptions.layer.borderWidth = 1
+        item_descriptions.layer.borderColor = UIColor.black.cgColor;
 //        view.layer.borderWidth = 1
 //        view.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
     }

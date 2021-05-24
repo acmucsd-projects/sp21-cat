@@ -321,6 +321,9 @@
                                 <state key="normal" title="Post Listing">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="cfN-jM-2eV" kind="presentation" id="VKe-c3-dm8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbM-Ef-WUj">
                                 <rect key="frame" x="20" y="306" width="110" height="35"/>
@@ -518,15 +521,57 @@
             <objects>
                 <viewController id="cfN-jM-2eV" customClass="ConfirmPostViewController" customModule="sp21_cat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F39-9T-Ns6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="da7-gt-ecS">
+                                <rect key="frame" x="59" y="116" width="296" height="610"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G24-A6-948">
+                                <rect key="frame" x="110" y="166" width="194" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Yay!">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You successfully posted a listing to ShopLot! Manage the listing and view buyers in My Listings." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIX-PR-2hP">
+                                <rect key="frame" x="87" y="226" width="241" height="219"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZQ-he-eXH">
+                                <rect key="frame" x="87" y="627" width="241" height="44"/>
+                                <color key="backgroundColor" red="0.53725490200000003" green="0.31764705879999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <state key="normal" title="Go to My Listings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="v3V-Oy-Zuq"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" red="1" green="0.71372549019607845" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9ZQ-he-eXH" firstAttribute="width" secondItem="gIX-PR-2hP" secondAttribute="width" id="73m-6d-mj1"/>
+                            <constraint firstItem="da7-gt-ecS" firstAttribute="centerY" secondItem="F39-9T-Ns6" secondAttribute="centerY" id="HFK-F3-amp"/>
+                            <constraint firstItem="G24-A6-948" firstAttribute="centerX" secondItem="F39-9T-Ns6" secondAttribute="centerX" id="S2H-eB-sxA"/>
+                            <constraint firstItem="v3V-Oy-Zuq" firstAttribute="bottom" secondItem="da7-gt-ecS" secondAttribute="bottom" constant="82" id="WyM-uL-AKZ"/>
+                            <constraint firstItem="da7-gt-ecS" firstAttribute="leading" secondItem="v3V-Oy-Zuq" secondAttribute="leading" constant="59" id="Xpb-8y-9eq"/>
+                            <constraint firstItem="da7-gt-ecS" firstAttribute="top" secondItem="G24-A6-948" secondAttribute="bottom" constant="26.666666666666657" id="c03-dq-n22"/>
+                            <constraint firstItem="da7-gt-ecS" firstAttribute="centerX" secondItem="F39-9T-Ns6" secondAttribute="centerX" id="k23-Bz-liH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAi-Ka-WfC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="-609"/>
+            <point key="canvasLocation" x="1140.5797101449277" y="-609.375"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="u5s-xS-tB0">
