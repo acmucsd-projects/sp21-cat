@@ -9,6 +9,9 @@ import UIKit
 
 class NotifyBuyerViewController: UIViewController {
 
+    @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
