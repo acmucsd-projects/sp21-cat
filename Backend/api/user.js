@@ -31,24 +31,29 @@ router.post('/signup', async (req, res) => {
 });
 
 router.put('/:user_id', async (req, res) => {
-    const { user } = req.body;
-    if (!user.email || !user.name || !user.password || !user.confirm_pswd) {
-        return res.status(400).json({ error: 'Invalid input' });
-    } 
+    const { user_id } = req.params;
+    if (!user_id) {
+        return res.status(400).json({ error: 'Invalid parameter' });
+    }
 
-    const updatedUser = await User.findById(req.params.user_id);
+    const { user } = req.body;
+    const updatedUser = await User.findById(user_id);
     if (!updatedUser) {
         return res.status(400).json({ error: 'User does not exist' });
     }
 
-    if (user.password != user.confirm_pswd) {
-        return res.status(400).json({ error: 'Passwords must match' });
+    if (user.email) { 
+        updatedUser.email = user.email;
     }
-        
-    updatedUser.email = user.email;
-    updatedUser.name = user.name;
-    const salt = await bcrypt.genSalt(10);
-    updatedUser.password = await bcrypt.hash(user.password, salt);
+    if (user.name) {
+        updatedUser.name = user.name;
+    }
+    if (user.password && user.confirm_pswd) {
+        if (user.password === user.confirm_pswd) {
+            const salt = await bcrypt.genSalt(10);
+            updatedUser.password = await bcrypt.hash(user.password, salt);
+        } 
+    }
     updatedUser.save();
     res.status(200).json({ message: 'User updated successfully' });
 });
