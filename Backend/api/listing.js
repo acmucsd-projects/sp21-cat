@@ -4,7 +4,7 @@ const User = require('../models/user');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    const listing = await Listing.find().exec();
+    const listing = await Listing.find().populate({ path: 'seller_id', select: [ 'name' ] }).exec();
     return res.status(200).json({ listing });
 });
 
@@ -14,7 +14,7 @@ router.get('/:listing_id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid parameter' });
     }
 
-    const listing = await Listing.findById(req.params.listing_id);
+    const listing = await Listing.findById(req.params.listing_id).populate({ path: 'seller_id', select: [ 'name' ] });
     if (!listing) {
         return res.status(400).json({ error: 'Listing does not exist' });
     }
@@ -33,7 +33,7 @@ router.get('/seller/:seller_id', async (req, res) => {
         return res.status(400).json({ error: 'User does not exist' });
     }
 
-    const listing = await Listing.find({ seller_id: seller_id });
+    const listing = await Listing.find({ seller_id: seller_id }).populate({ path: 'seller_id', select: [ 'name' ] });
     if (!listing || listing.length === 0) {
         return res.status(200).json({ message: 'User does not have any listings' });
     }
