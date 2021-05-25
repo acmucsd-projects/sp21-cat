@@ -68,7 +68,7 @@ router.get('/price/:listing_id', async (req, res) => {
     }
 
     const bids = listing.bids;
-    bids.sort((a, b) => (a.bid_amt > b.bid_amt) ? -1 : (a.bid_amt === b.bid_amt) ? ((a.timestamp > b.timestamp) ? -1 : 1) : 1);
+    bids.sort((a, b) => (a.bid_amt > b.bid_amt || (a.bid_amt === b.bid_amt && a.timestamp > b.timestamp)) ? -1 : 1);
     
     return res.status(200).json({ bids });
 });
@@ -85,7 +85,7 @@ router.get('/time/:listing_id', async (req, res) => {
     }
 
     const bids = listing.bids;
-    bids.sort((a, b) => (a.timestamp > b.timestamp) ? 1 : (a.timestamp === b.timestamp) ? ((a.bid_amt > b.bid_amt) ? 1 : -1) : -1);
+    bids.sort((a, b) => (a.timestamp > b.timestamp || (a.timestamp === b.timestamp && a.bid_amt > b.bid_amt)) ? 1 : -1);
     
     return res.status(200).json({ bids });
 });
