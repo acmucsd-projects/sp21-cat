@@ -20,6 +20,7 @@ const ListingSchema = new mongoose.Schema(
         highest_bid: {
             type: Boolean,
             required: true,
+            default: true,
         },
         categories: {
             type: [String],

@@ -20,8 +20,13 @@ const BidSchema = new mongoose.Schema(
         timestamp: {
             type: Date,
             required: true,
-            /* default: Date.now */
-        }
+            default: Date.now,
+        },
+        approved: {
+            type: Boolean,
+            required: true,
+            default: false,
+        },
     }
 )
 

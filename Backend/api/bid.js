@@ -44,7 +44,7 @@ router.post('/:listing_id', async (req, res) => {
         bidder_id: bidder_id,
         listing_id: listing_id,
         bid_amt: bid_amt,
-        timestamp: new Date()
+        /*timestamp: new Date()*/
     }
 
     const newBid = await Bid.create(newBidSchema);
@@ -104,5 +104,21 @@ router.get('/:buyer_id', async (req, res) => {
     const bids = await Bid.find({ bidder_id: buyer_id }).populate('listing_id');
     return res.status(200).json({ bids });
 });
+
+router.post('/approve/:bid_id', async (req, res) => {
+    const { bid_id } = req.params;
+    if (!bid_id) {
+        return res.status(400).json({ error: 'Invalid parameter' });
+    }
+
+    const bid = await Bid.findById(bid_id);
+    if (!bid) {
+        return res.status(400).json({ error: 'Bid does not exist' });
+    }
+
+    bid.approved = true;
+    bid.save();
+    return res.status(200).json({ message: 'Successfully approved bid' });
+})
 
 module.exports = router;
