@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263F4F8A26628DE500C1DE20 /* ViewBuyersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F4F8926628DE500C1DE20 /* ViewBuyersCell.swift */; };
 		264A72FA2653550700250EF0 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A72F92653550700250EF0 /* ListingCell.swift */; };
 		265433E8264A1CB000DA3BE1 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433E7264A1CB000DA3BE1 /* ListingsViewController.swift */; };
 		265433EA264A1D5500DA3BE1 /* ManageListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433E9264A1D5500DA3BE1 /* ManageListingViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		263F4F8926628DE500C1DE20 /* ViewBuyersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuyersCell.swift; sourceTree = "<group>"; };
 		264A72F92653550700250EF0 /* ListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
 		265433E7264A1CB000DA3BE1 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		265433E9264A1D5500DA3BE1 /* ManageListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageListingViewController.swift; sourceTree = "<group>"; };
@@ -124,13 +126,14 @@
 				74DC19B42634A05F00F0D79E /* SceneDelegate.swift */,
 				26C8B5DD2640F17F0093E83A /* SellerLoginViewController.swift */,
 				265433E7264A1CB000DA3BE1 /* ListingsViewController.swift */,
+				264A72F92653550700250EF0 /* ListingCell.swift */,
 				26C8B5DF2640F5DE0093E83A /* NewListingViewController.swift */,
 				265433EF264A1ED000DA3BE1 /* ConfirmPostViewController.swift */,
 				265433E9264A1D5500DA3BE1 /* ManageListingViewController.swift */,
 				265433EB264A1E2C00DA3BE1 /* ViewBuyersViewController.swift */,
+				263F4F8926628DE500C1DE20 /* ViewBuyersCell.swift */,
 				265433ED264A1E7B00DA3BE1 /* NotifyBuyerViewController.swift */,
 				74DC19B82634A05F00F0D79E /* Main.storyboard */,
-				264A72F92653550700250EF0 /* ListingCell.swift */,
 				74DC19E72634A2A000F0D79E /* sp21-cat.m */,
 				74DC19BB2634A06100F0D79E /* Assets.xcassets */,
 				74DC19BD2634A06100F0D79E /* LaunchScreen.storyboard */,
@@ -292,6 +295,7 @@
 			files = (
 				26C8B5E02640F5DE0093E83A /* NewListingViewController.swift in Sources */,
 				265433F0264A1ED000DA3BE1 /* ConfirmPostViewController.swift in Sources */,
+				263F4F8A26628DE500C1DE20 /* ViewBuyersCell.swift in Sources */,
 				74DC19E82634A2A000F0D79E /* sp21-cat.m in Sources */,
 				265433EA264A1D5500DA3BE1 /* ManageListingViewController.swift in Sources */,
 				74DC19B32634A05F00F0D79E /* AppDelegate.swift in Sources */,

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "31485DE0-F2AA-41EF-A4A4-2422B16155A7"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1295AAEC-807A-4582-A93A-AA9F16866910"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "sp21-cat/ManageListingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "ManageListingViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1295AAEC-807A-4582-A93A-AA9F16866910 - 1671480a437f1d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sp21_cat.ManageListingViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; sp21_cat.ManageListingViewController"
+                  moduleName = "sp21-cat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevenliu/Documents/iOS%20course%20Apps/sp21-cat/sp21-cat/ManageListingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "1295AAEC-807A-4582-A93A-AA9F16866910 - d5c8f8c60be42bdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sp21_cat.ManageListingViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; sp21_cat.ManageListingViewController"
+                  moduleName = "sp21-cat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevenliu/Documents/iOS%20course%20Apps/sp21-cat/sp21-cat/ManageListingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "1295AAEC-807A-4582-A93A-AA9F16866910 - 2c17d06087d91abf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sp21_cat.ManageListingViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;sp21_cat.ManageListingViewController&gt;"
+                  moduleName = "sp21-cat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevenliu/Documents/iOS%20course%20Apps/sp21-cat/sp21-cat/ManageListingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "1295AAEC-807A-4582-A93A-AA9F16866910 - df795ad2197f8797"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sp21_cat.ManageListingViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;sp21_cat.ManageListingViewController&gt;"
+                  moduleName = "sp21-cat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevenliu/Documents/iOS%20course%20Apps/sp21-cat/sp21-cat/ManageListingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "1295AAEC-807A-4582-A93A-AA9F16866910 - 33cca652f2e0f435"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sp21_cat.ManageListingViewController.__deallocating_deinit"
+                  moduleName = "sp21-cat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevenliu/Documents/iOS%20course%20Apps/sp21-cat/sp21-cat/ManageListingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
