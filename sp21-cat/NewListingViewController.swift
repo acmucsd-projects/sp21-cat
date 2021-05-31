@@ -110,28 +110,28 @@ class NewListingViewController: UIViewController, UITextViewDelegate {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.destination is ConfirmPostViewController {
-//            { "newListing": { "categories", "_id", "item_name", "seller_id", "price", "highest_bid", "description", "bids", "__v" } }
-            
-            // prepare json data
-            let json: [String: Any] = ["categories": cates[selected_cate] as String,
-                                       "_id": "",
-                                       "item_name": itemName.text! as String,
-                                        "seller_id": "",
-                                        "price": startingPrice.text! as String,
-                                        "highest_bid": hideBid_switch.isOn,
-                                        "description": item_description.text! as String,
-                                        "bids": [],
-                                        "__v": ""] as [String : Any]
-            
-            let jsonData = try? JSONSerialization.data(withJSONObject: json)
-            //Make API post request
-           
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        if segue.destination is ConfirmPostViewController {
+////            { "newListing": { "categories", "_id", "item_name", "seller_id", "price", "highest_bid", "description", "bids", "__v" } }
+//
+//            // prepare json data
+//            let json: [String: Any] = ["categories": cates[selected_cate] as String,
+//                                       "_id": "",
+//                                       "item_name": itemName.text! as String,
+//                                        "seller_id": "",
+//                                        "price": startingPrice.text! as String,
+//                                        "highest_bid": hideBid_switch.isOn,
+//                                        "description": item_description.text! as String,
+//                                        "bids": [],
+//                                        "__v": ""] as [String : Any]
+//
+//            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+//            //Make API post request
+//
+//        }
+//    }
 
 
 }

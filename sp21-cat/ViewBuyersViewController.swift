@@ -48,6 +48,12 @@ class ViewBuyersViewController: UIViewController, UITableViewDelegate, UITableVi
         self.title = "Interested Buyers"
         // Do any additional setup after loading the view.
         
+        orderByPrice_btn.layer.borderWidth = 1
+        orderByPrice_btn.layer.borderColor = UIColor.black.cgColor
+        orderByPrice_btn.layer.cornerRadius = 5
+        orderByTime_btn.layer.borderWidth = 1
+        orderByTime_btn.layer.borderColor = UIColor.black.cgColor
+        orderByTime_btn.layer.cornerRadius = 5
         // By default, sort by PRICE (newest at th top)
         orderByPrice_btn.backgroundColor = UIColor.gray
         orderByTime_btn.backgroundColor = UIColor.white
