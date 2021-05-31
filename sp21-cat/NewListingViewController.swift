@@ -7,19 +7,15 @@
 
 import UIKit
 
-class NewListingViewController: UIViewController {
+class NewListingViewController: UIViewController, UITextViewDelegate {
 
-    @IBOutlet weak var closePage_btn: UIButton!
+//    @IBOutlet weak var closePage_btn: UIButton!
     
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var startingPrice: UITextField!
     @IBOutlet weak var hideBid_switch: UISwitch!
     @IBOutlet weak var item_description: UITextView!
-    
-    @IBOutlet weak var photo1_btn: UIButton!
-    @IBOutlet weak var photo2_btn: UIButton!
-    @IBOutlet weak var photo3_btn: UIButton!
-    
+        
     @IBOutlet weak var cate0: UIButton!
     @IBOutlet weak var cate1: UIButton!
     @IBOutlet weak var cate2: UIButton!
@@ -27,26 +23,56 @@ class NewListingViewController: UIViewController {
     @IBOutlet weak var cate4: UIButton!
     @IBOutlet weak var cate5: UIButton!
     
+    @IBOutlet weak var photo1_btn: UIButton!
+    @IBOutlet weak var photo2_btn: UIButton!
+    @IBOutlet weak var photo3_btn: UIButton!
+    
     @IBOutlet weak var postListing_btn: UIButton!
     
-    let cates: [String] = ["Fashion", "Electronics", "Furniture", "Toys/Games", "Food", "Others"]
+    let cates: [String] = ["Fashion", "Electronics", "Furniture", "Education", "Food", "Others"]
     var num_cateBtns: [Int:UIButton] = [Int:UIButton]()
     var selected_cate:Int = 5
     let selected_btn_color = UIColor(red: 137.0/255, green: 81.0/255, blue: 255.0/255, alpha: 1)
     let default_btn_color = UIColor(red: 196.0/255, green: 168.0/255, blue: 255.0/255, alpha: 1)
+    let description_ph:String = "Tell something about your item!"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        item_description.delegate = self
+        // Do any additional setup after loading the view.
         self.navigationItem.title = "Add New Listing"
         num_cateBtns = [0: cate0, 1: cate1, 2: cate2, 3: cate3, 4: cate4, 5: cate5]
-        // Do any additional setup after loading the view.
+        for (index, cateBtn) in num_cateBtns {
+            cateBtn.layer.cornerRadius = 8;
+            cateBtn.layer.borderWidth = 1;
+            cateBtn.layer.borderColor = UIColor.black.cgColor
+            cateBtn.setTitle(cates[index], for: .normal)
+        }
         cate5.backgroundColor = selected_btn_color
-        cate5.layer.cornerRadius = 20;
         item_description.layer.borderWidth = 1
-        item_description.layer.borderColor = UIColor.black.cgColor;
-//        view.layer.borderWidth = 1
-//        view.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        item_description.layer.borderColor = UIColor.black.cgColor
+        item_description.text = description_ph
+        item_description.textColor = UIColor.lightGray
+        postListing_btn.layer.borderWidth = 1
+        postListing_btn.layer.cornerRadius = 5
+        postListing_btn.layer.borderColor = UIColor.black.cgColor
+        
+        itemName.becomeFirstResponder()
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = description_ph
+            textView.textColor = UIColor.lightGray
+        }
     }
     
     @IBAction func changeCate(sender: AnyObject) {

@@ -64,6 +64,8 @@ class ListingsViewController: UIViewController, UICollectionViewDelegate, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListingCell", for: indexPath) as! ListingCell
         let listing = listings[indexPath.item]
         
+        cell.manage_btn.tag = indexPath.item
+        cell.viewBuyers_btn.tag = indexPath.item
         cell.item_name.text = listing["item_name"] as? String
         cell.item_price.text = listing["price"] as? String
         return cell
@@ -76,19 +78,26 @@ class ListingsViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let cell = sender as! ListingCell
-        let indexPath = collectionView.indexPath(for: cell)
-        let listing = listings[indexPath!.item]
+//        let cell = sender as! UICollectionViewCell
+//        let indexPath = collectionView.indexPath(for: cell)
         
         if segue.destination is ViewBuyersViewController {
+            let btn = sender as! UIButton
+            let listing = listings[btn.tag]
+            
             let vc = segue.destination as? ViewBuyersViewController
             vc?.listing_id = listing["_id"] as! String
             vc?.itemName = listing["item_name"] as! String
         }else if segue.destination is ManageListingViewController {
+            let btn = sender as! UIButton
+            let listing = listings[btn.tag]
+            
             let vc = segue.destination as? ManageListingViewController
             vc?.listing = listing
+        }else if ((segue.destination as? NewListingViewController) != nil) {
+            
         }
-        collectionView.deselectItem(at: indexPath!, animated: true)
+//        collectionView.deselectItem(at: indexPath!, animated: true)
     }
     
 
