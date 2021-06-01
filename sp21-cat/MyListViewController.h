@@ -13,12 +13,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyListViewController : UIViewController
-{
-    IBOutlet UITableView *myTable;
-    NSMutableArray *myArray;
-    NSMutableArray *imagesArray;
-
-}
+@interface MyListViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (strong, nonatomic) IBOutlet UICollectionView *myListCollection;
+@property (strong, nonatomic) IBOutlet UILabel *totalItems;
 
 @end

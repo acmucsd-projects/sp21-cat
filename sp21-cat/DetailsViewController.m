@@ -8,6 +8,17 @@
 #import <Foundation/Foundation.h>
 #import "DetailsViewController.h"
 
-@interface DetailsViewController ()
+@interface DetailsViewController (){
+}
 
+@end
+
+@implementation DetailsViewController
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    _img = _imgPassedIn;
+    _name.text = _namePassedIn;
+    _price.text = _pricePassedIn;
+}
 @end

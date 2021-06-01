@@ -18,6 +18,8 @@
 		7499190C2653322900FF0D22 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7499190B2653322900FF0D22 /* DetailsViewController.m */; };
 		7499190F265332E200FF0D22 /* MarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7499190E265332E200FF0D22 /* MarkViewController.m */; };
 		7499191126535B5500FF0D22 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7499191026535B5500FF0D22 /* image.jpg */; };
+		74991913265CA70900FF0D22 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74991912265CA70800FF0D22 /* Storyboard.storyboard */; };
+		749919152663F10700FF0D22 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749919142663F10700FF0D22 /* AppStoryboard.swift */; };
 		74DC19B32634A05F00F0D79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B22634A05F00F0D79E /* AppDelegate.swift */; };
 		74DC19B52634A05F00F0D79E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B42634A05F00F0D79E /* SceneDelegate.swift */; };
 		74DC19B72634A05F00F0D79E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B62634A05F00F0D79E /* ViewController.swift */; };
@@ -64,6 +66,8 @@
 		7499190D265332BB00FF0D22 /* MarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkViewController.h; sourceTree = "<group>"; };
 		7499190E265332E200FF0D22 /* MarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkViewController.m; sourceTree = "<group>"; };
 		7499191026535B5500FF0D22 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		74991912265CA70800FF0D22 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		749919142663F10700FF0D22 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		74DC19AF2634A05F00F0D79E /* sp21-cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sp21-cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DC19B22634A05F00F0D79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74DC19B42634A05F00F0D79E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				7499191026535B5500FF0D22 /* image.jpg */,
 				74DC19B62634A05F00F0D79E /* ViewController.swift */,
 				74DC19B82634A05F00F0D79E /* Main.storyboard */,
+				74991912265CA70800FF0D22 /* Storyboard.storyboard */,
 				7499190E265332E200FF0D22 /* MarkViewController.m */,
 				7499190D265332BB00FF0D22 /* MarkViewController.h */,
 				7499190B2653322900FF0D22 /* DetailsViewController.m */,
@@ -163,6 +168,7 @@
 				749918FC265315DC00FF0D22 /* ShopViewController.h */,
 				74DC19E72634A2A000F0D79E /* sp21-cat.m */,
 				74DC19BB2634A06100F0D79E /* Assets.xcassets */,
+				749919142663F10700FF0D22 /* AppStoryboard.swift */,
 				74DC19BD2634A06100F0D79E /* LaunchScreen.storyboard */,
 				74DC19C02634A06100F0D79E /* Info.plist */,
 				74DC19E62634A2A000F0D79E /* sp21-cat-Bridging-Header.h */,
@@ -294,6 +300,7 @@
 			files = (
 				74DC19BF2634A06100F0D79E /* LaunchScreen.storyboard in Resources */,
 				749918F52652601B00FF0D22 /* Lato-Thin.ttf in Resources */,
+				74991913265CA70900FF0D22 /* Storyboard.storyboard in Resources */,
 				74DC19BC2634A06100F0D79E /* Assets.xcassets in Resources */,
 				749918F32652600500FF0D22 /* Lato-Regular.ttf in Resources */,
 				74DC19BA2634A05F00F0D79E /* Main.storyboard in Resources */,
@@ -334,6 +341,7 @@
 				7499190C2653322900FF0D22 /* DetailsViewController.m in Sources */,
 				7499190026532E1A00FF0D22 /* MyListViewController.m in Sources */,
 				74DC19B52634A05F00F0D79E /* SceneDelegate.swift in Sources */,
+				749919152663F10700FF0D22 /* AppStoryboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
