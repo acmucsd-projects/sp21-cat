@@ -23,6 +23,7 @@ class ListingsViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.dataSource = self
         collectionView.delegate = self
                 
+        self.tabBarController?.tabBar.items![0].title = "My Listings"
         // Do any additional setup after loading the view.
         let url = URL(string: "http://localhost:3000/listing")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
