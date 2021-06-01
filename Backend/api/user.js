@@ -8,6 +8,17 @@ router.get('/', async (req, res) => {
     res.status(200).json({ user });
 });
 
+router.get('/name/:user_id', async (req, res) => {
+    const { user_id } = req.params;
+    if (!user_id) {
+        return res.status(400).json({ error: 'Invalid parameter' });
+    }
+
+    const user = await User.findById(user_id);
+    const name = user.name;
+    res.status(200).json({ name });
+});
+
 router.post('/signup', async (req, res) => {
     const { user } = req.body;
     if (!user.email || !user.name || !user.password || !user.confirm_pswd) {

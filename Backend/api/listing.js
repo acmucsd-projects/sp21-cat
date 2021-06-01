@@ -2,9 +2,11 @@ const express = require('express');
 const Listing = require('../models/listing');
 const User = require('../models/user');
 const router = express.Router();
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 router.get('/', async (req, res) => {
-    const listing = await Listing.find().populate({ path: 'seller_id', select: [ 'name' ] }).exec();
+    const listing = await Listing.find().populate({ path: 'seller_id', select: [ 'name' ] }).populate('bids').exec();
     return res.status(200).json({ listing });
 });
 
@@ -14,7 +16,7 @@ router.get('/:listing_id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid parameter' });
     }
 
-    const listing = await Listing.findById(req.params.listing_id).populate({ path: 'seller_id', select: [ 'name' ] });
+    const listing = await Listing.findById(req.params.listing_id).populate({ path: 'seller_id', select: [ 'name' ] }).populate('bids');
     if (!listing) {
         return res.status(400).json({ error: 'Listing does not exist' });
     }
@@ -33,7 +35,7 @@ router.get('/seller/:seller_id', async (req, res) => {
         return res.status(400).json({ error: 'User does not exist' });
     }
 
-    const listing = await Listing.find({ seller_id: seller_id }).populate({ path: 'seller_id', select: [ 'name' ] });
+    const listing = await Listing.find({ seller_id: seller_id }).populate({ path: 'seller_id', select: [ 'name' ] }).populate('bids');
     if (!listing || listing.length === 0) {
         return res.status(200).json({ message: 'User does not have any listings' });
     }
@@ -41,9 +43,28 @@ router.get('/seller/:seller_id', async (req, res) => {
     return res.status(200).json({ listing });
 });
 
-router.post('/', async (req, res) => {
-    const { listing } = req.body;
-    const { item_name, seller_id, price, highest_bid, description } = listing;
+router.get('/category/:category_name', async (req, res) => {
+    const { category_name } = req.params;
+    if (!category_name) {
+        return res.status(400).json({ error: 'Invalid parameter' });
+    }
+
+    const all_listings = await Listing.find().populate({ path: 'seller_id', select: [ 'name' ] }).populate('bids');
+    const listings = [];
+
+    all_listings.forEach(listing => {
+        if (listing.categories.includes(category_name)) {
+            listings.push(listing);
+        }
+    });
+
+    return res.status(200).json({ listings });
+});
+
+router.post('/', upload.single('image'), async (req, res) => {
+    console.log(req.body);
+    const { item_name, seller_id, price, highest_bid, description, categories } = req.body;
+    const listing = { item_name, seller_id, price, highest_bid, description, categories };
 
     if (!item_name || !seller_id || !price || !highest_bid || !description) {
         return res.status(400).json({ error: 'Invalid input' });
@@ -67,8 +88,7 @@ router.put('/:listing_id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid parameter' });
     }
 
-    const { listing } = req.body;
-    const { item_name, seller_id, price, highest_bid, description } = listing;
+    const { item_name, seller_id, price, highest_bid, description, categories } = req.body;
 
     if (!item_name || !seller_id || !price || !highest_bid || !description) {
         return res.status(400).json({ error: 'Invalid input' });
@@ -84,6 +104,7 @@ router.put('/:listing_id', async (req, res) => {
     existingListing.price = price;
     existingListing.highest_bid = highest_bid;
     existingListing.description = description;
+    existingListing.categories = categories;
     existingListing.save();
     return res.status(200).json({ message: 'Listing updated successfully' });
 });
