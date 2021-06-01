@@ -29,10 +29,9 @@ const ListingSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        /*images: {
-            type: [String],
-            required: false,
-        },*/
+        image: {
+            type: String,
+        },
         bids: [{
             type: ObjectId,
             ref: 'Bid',
