@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const ObjectId = require('mongodb').ObjectID;
-const BidSchema = require('./bid').schema;
 
 const ListingSchema = new mongoose.Schema(
     {
@@ -34,10 +33,10 @@ const ListingSchema = new mongoose.Schema(
             type: [String],
             required: false,
         },*/
-        bids: {
-            type: [BidSchema],
-            required: false,
-        }
+        bids: [{
+            type: ObjectId,
+            ref: 'Bid',
+        }],
     
     }
 )

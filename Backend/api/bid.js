@@ -1,12 +1,11 @@
 const express = require('express');
-const ObjectId = require('mongodb').ObjectID;
 const Listing = require('../models/listing');
 const User = require('../models/user');
 const Bid = require('../models/bid');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    const bid = await Bid.find().exec();
+    const bid = await Bid.find().populate('listing_id').populate({ path: 'bidder_id', select: [ 'name' ] }).exec();
     res.status(200).json({ bid });
 });
 
@@ -44,12 +43,11 @@ router.post('/:listing_id', async (req, res) => {
         bidder_id: bidder_id,
         listing_id: listing_id,
         bid_amt: bid_amt,
-        /*timestamp: new Date()*/
     }
 
     const newBid = await Bid.create(newBidSchema);
     const bids = listing.bids;
-    bids.push(newBid);
+    bids.push(newBid._id);
     listing.bids = bids;
     listing.save();
     
@@ -62,14 +60,13 @@ router.get('/price/:listing_id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid parameter' });
     }
 
-    const listing = await Listing.findById(req.params.listing_id);
+    const listing = await Listing.findById(req.params.listing_id).populate('bids').populate({ path: 'bids.bidder_id', select: [ 'name' ] });
     if (!listing) {
         return res.status(400).json({ error: 'Listing does not exist' });
     }
 
     const bids = listing.bids;
     bids.sort((a, b) => (a.bid_amt > b.bid_amt || (a.bid_amt === b.bid_amt && a.timestamp > b.timestamp)) ? -1 : 1);
-    
     return res.status(200).json({ bids });
 });
 
@@ -79,14 +76,13 @@ router.get('/time/:listing_id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid parameter' });
     }
 
-    const listing = await Listing.findById(req.params.listing_id);
+    const listing = await Listing.findById(req.params.listing_id).populate('bids');
     if (!listing) {
         return res.status(400).json({ error: 'Listing does not exist' });
     }
 
     const bids = listing.bids;
     bids.sort((a, b) => (a.timestamp > b.timestamp || (a.timestamp === b.timestamp && a.bid_amt > b.bid_amt)) ? 1 : -1);
-    
     return res.status(200).json({ bids });
 });
 
