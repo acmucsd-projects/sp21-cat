@@ -2,6 +2,8 @@ const express = require('express');
 const Listing = require('../models/listing');
 const User = require('../models/user');
 const router = express.Router();
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 router.get('/', async (req, res) => {
     const listing = await Listing.find().populate({ path: 'seller_id', select: [ 'name' ] }).exec();
@@ -41,9 +43,28 @@ router.get('/seller/:seller_id', async (req, res) => {
     return res.status(200).json({ listing });
 });
 
-router.post('/', async (req, res) => {
-    const { listing } = req.body;
-    const { item_name, seller_id, price, highest_bid, description } = listing;
+router.get('/category/:category_name', async (req, res) => {
+    const { category_name } = req.params;
+    if (!category_name) {
+        return res.status(400).json({ error: 'Invalid parameter' });
+    }
+
+    const listings = await Listing.find().populate({ path: 'seller_id', select: [ 'name' ] });
+    const category_listings = [];
+
+    listings.forEach(listing => {
+        if (listing.categories.includes(category_name)) {
+            category_listings.push(listing);
+        }
+    });
+
+    return res.status(200).json({ category_listings });
+});
+
+router.post('/', upload.single('image'), async (req, res) => {
+    console.log(req.body);
+    const { item_name, seller_id, price, highest_bid, description, categories } = req.body;
+    const listing = { item_name, seller_id, price, highest_bid, description, categories };
 
     if (!item_name || !seller_id || !price || !highest_bid || !description) {
         return res.status(400).json({ error: 'Invalid input' });
@@ -67,8 +88,8 @@ router.put('/:listing_id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid parameter' });
     }
 
-    const { listing } = req.body;
-    const { item_name, seller_id, price, highest_bid, description } = listing;
+    const { item_name, seller_id, price, highest_bid, description, categories } = req.body;
+    const listing = { item_name, seller_id, price, highest_bid, description, categories };
 
     if (!item_name || !seller_id || !price || !highest_bid || !description) {
         return res.status(400).json({ error: 'Invalid input' });
