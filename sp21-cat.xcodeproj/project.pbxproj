@@ -17,6 +17,8 @@
 		265433F2264A1F4F00DA3BE1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433F1264A1F4F00DA3BE1 /* ProfileViewController.swift */; };
 		26C8B5DE2640F17F0093E83A /* SellerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8B5DD2640F17F0093E83A /* SellerLoginViewController.swift */; };
 		26C8B5E02640F5DE0093E83A /* NewListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8B5DF2640F5DE0093E83A /* NewListingViewController.swift */; };
+		749918F52652601B00FF0D22 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749918F42652601B00FF0D22 /* Lato-Thin.ttf */; };
+		749919152663F10700FF0D22 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749919142663F10700FF0D22 /* AppStoryboard.swift */; };
 		74DC19B32634A05F00F0D79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B22634A05F00F0D79E /* AppDelegate.swift */; };
 		74DC19B52634A05F00F0D79E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B42634A05F00F0D79E /* SceneDelegate.swift */; };
 		74DC19BA2634A05F00F0D79E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74DC19B82634A05F00F0D79E /* Main.storyboard */; };
@@ -55,6 +57,20 @@
 		265433F1264A1F4F00DA3BE1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		26C8B5DD2640F17F0093E83A /* SellerLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerLoginViewController.swift; sourceTree = "<group>"; };
 		26C8B5DF2640F5DE0093E83A /* NewListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListingViewController.swift; sourceTree = "<group>"; };
+		749918F42652601B00FF0D22 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Thin.ttf"; path = "/Downloads/Lato2OFL/Lato-Thin.ttf"; sourceTree = "<absolute>"; };
+		749918FA2653156000FF0D22 /* ShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		749918FC265315DC00FF0D22 /* ShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		749918FF26532E1A00FF0D22 /* MyListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyListViewController.m; sourceTree = "<group>"; };
+		7499190126532E7600FF0D22 /* MyListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyListViewController.h; sourceTree = "<group>"; };
+		74991902265330BA00FF0D22 /* NotifsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifsViewController.m; sourceTree = "<group>"; };
+		74991904265330D600FF0D22 /* NotifsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifsViewController.h; sourceTree = "<group>"; };
+		749919052653315000FF0D22 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		749919072653316800FF0D22 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		7499190A2653321300FF0D22 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		7499190B2653322900FF0D22 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		7499190D265332BB00FF0D22 /* MarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkViewController.h; sourceTree = "<group>"; };
+		7499190E265332E200FF0D22 /* MarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkViewController.m; sourceTree = "<group>"; };
+		749919142663F10700FF0D22 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		74DC19AF2634A05F00F0D79E /* sp21-cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sp21-cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DC19B22634A05F00F0D79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74DC19B42634A05F00F0D79E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7492B7232665BDF300FE3AD0 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				749918F42652601B00FF0D22 /* Lato-Thin.ttf */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		74DC19A62634A05F00F0D79E = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +130,7 @@
 				74DC19C82634A06200F0D79E /* sp21-catTests */,
 				74DC19D32634A06200F0D79E /* sp21-catUITests */,
 				74DC19B02634A05F00F0D79E /* Products */,
+				7492B7232665BDF300FE3AD0 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,8 +159,21 @@
 				263F4F8926628DE500C1DE20 /* ViewBuyersCell.swift */,
 				265433ED264A1E7B00DA3BE1 /* NotifyBuyerViewController.swift */,
 				74DC19B82634A05F00F0D79E /* Main.storyboard */,
+				7499190E265332E200FF0D22 /* MarkViewController.m */,
+				7499190D265332BB00FF0D22 /* MarkViewController.h */,
+				7499190B2653322900FF0D22 /* DetailsViewController.m */,
+				7499190A2653321300FF0D22 /* DetailsViewController.h */,
+				749919052653315000FF0D22 /* ProfileViewController.m */,
+				749919072653316800FF0D22 /* ProfileViewController.h */,
+				74991902265330BA00FF0D22 /* NotifsViewController.m */,
+				74991904265330D600FF0D22 /* NotifsViewController.h */,
+				749918FF26532E1A00FF0D22 /* MyListViewController.m */,
+				7499190126532E7600FF0D22 /* MyListViewController.h */,
+				749918FA2653156000FF0D22 /* ShopViewController.m */,
+				749918FC265315DC00FF0D22 /* ShopViewController.h */,
 				74DC19E72634A2A000F0D79E /* sp21-cat.m */,
 				74DC19BB2634A06100F0D79E /* Assets.xcassets */,
+				749919142663F10700FF0D22 /* AppStoryboard.swift */,
 				74DC19BD2634A06100F0D79E /* LaunchScreen.storyboard */,
 				74DC19C02634A06100F0D79E /* Info.plist */,
 				74DC19E62634A2A000F0D79E /* sp21-cat-Bridging-Header.h */,
@@ -267,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74DC19BF2634A06100F0D79E /* LaunchScreen.storyboard in Resources */,
+				749918F52652601B00FF0D22 /* Lato-Thin.ttf in Resources */,
 				74DC19BC2634A06100F0D79E /* Assets.xcassets in Resources */,
 				74DC19BA2634A05F00F0D79E /* Main.storyboard in Resources */,
 			);
@@ -306,6 +345,7 @@
 				265433EE264A1E7B00DA3BE1 /* NotifyBuyerViewController.swift in Sources */,
 				26C8B5DE2640F17F0093E83A /* SellerLoginViewController.swift in Sources */,
 				74DC19B52634A05F00F0D79E /* SceneDelegate.swift in Sources */,
+				749919152663F10700FF0D22 /* AppStoryboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

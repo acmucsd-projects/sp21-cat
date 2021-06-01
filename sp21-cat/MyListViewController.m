@@ -8,7 +8,11 @@
 #import <Foundation/Foundation.h>
 #import "MyListViewController.h"
 
-@interface MyListViewController ()
+@interface MyListViewController (){
+    NSArray *imgArr;
+    NSArray *nameArr;
+    NSArray *priceArr;
+}
 
 @end
 
@@ -16,72 +20,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-     myArray = [[NSMutableArray alloc]initWithObjects:
-              @"Item 1",@"Item 2",@"Item 3",
-               @"Item 4",@"Item 5",@"Item 6",@"Item 7",
-               @"Item 8",@"Item 9",@"Item 10", nil];
-    imagesArray = [[NSMutableArray alloc] init];
-    [imagesArray addObject:@"image.jpg"];
-//    [imagesArray addObject:imageView2];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
+    imgArr = [[NSArray alloc] initWithObjects:@"Fake Plant Pots Pic", @"iphone 11 Pic", @"Fall Outfit Bundle Pic", @"Teddy Bear Pic",@"Fake Plant Pots Pic", @"iphone 11 Pic", @"Fall Outfit Bundle Pic", @"Teddy Bear Pic", nil];
+    nameArr = [[NSArray alloc] initWithObjects:@"Fake Plant Pots", @"iphone 11", @"Fall Outfit Bundle", @"Teddy Bear",@"Fake Plant Pots", @"iphone 11", @"Fall Outfit Bundle", @"Teddy Bear", nil];
+    priceArr = [[NSArray alloc] initWithObjects:@"$12.00", @"$250.00", @"$36.00", @"$4.00",@"$12.00", @"$250.00", @"$36.00", @"$4.00", nil];
+    _totalItems.text = [NSString stringWithFormat:@"Total: %lu items", (unsigned long)imgArr.count];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table View Data source
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:
-(NSInteger)section{
-    return [myArray count];
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(140, 177);
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:
-(NSIndexPath *)indexPath{
-    static NSString *cellId = @"SimpleTableId";
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return imgArr.count;
+}
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
-                             cellId];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:
-                UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    NSString *stringForCell= [myArray objectAtIndex:indexPath.row];
-//    UIImageView *imgForCell = [imagesArray objectAtIndex:indexPath.row];
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
+    UIImageView *imgView = (UIImageView *)[cell viewWithTag:100];
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:101];
+    UILabel *priceLabel = (UILabel *)[cell viewWithTag:102];
 
-    [cell.textLabel setText:stringForCell];
-//    [cell.imageView setImage:[imagesArray objectAtIndex:0]];
-    cell.imageView.image = [UIImage imageNamed:@"image.jpg"];
+    imgView.image = [UIImage imageNamed:[imgArr objectAtIndex:indexPath.row]];
+    nameLabel.text = [nameArr objectAtIndex:indexPath.row];
+    priceLabel.text = [priceArr objectAtIndex:indexPath.row];
+
+    cell.backgroundColor = UIColor.whiteColor;
+    
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGFloat cellHeight = 50;
-
-    NSString *text = [myArray objectAtIndex:indexPath.row];
-//    UIFont *font = [UIFont systemFontOfSize:14];// The font should be the same as that of your textView
-    UIFont *font = [UIFont fontWithName:@"Lato" size:16];
-
-    int maxWidth = 100;
-    CGSize constraintSize = CGSizeMake(maxWidth, CGFLOAT_MAX);// maxWidth = max width for the textView
-
-    CGSize size = [text sizeWithFont:font constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-
-    cellHeight += size.height; //you can also add a cell padding if you want some space below textView
-    return cellHeight;
-}
-
-#pragma mark - TableView delegate
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:
-(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"Section:%d Row:%d selected and its data is %@",
-          indexPath.section,indexPath.row,cell.textLabel.text);
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
 }
 
 @end

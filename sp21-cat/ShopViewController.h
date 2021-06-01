@@ -10,14 +10,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShopViewController : UIViewController<UITableViewDataSource,
-UITableViewDelegate>
-{
-    
-    IBOutlet UITableView *myTable;
-    NSMutableArray *myArray;
-    NSMutableArray *imagesArray;
+@interface ShopViewController : UIViewController  <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, NSURLConnectionDelegate>{
+    NSData* responseData;
 }
+@property (strong, nonatomic) IBOutlet UICollectionView *shopCollection;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+//@property (nonatomic, retain) NSData* responseData;
+
 
 @end
+
+//@interface ShopViewController : UIViewController<UITableViewDataSource,
+//UITableViewDelegate>
+//{
+//
+//    IBOutlet UITableView *myTable;
+//    NSMutableArray *myArray;
+//    NSMutableArray *imagesArray;
+//}
+//
+//@end
 //#endif /* ShopViewController_h */
