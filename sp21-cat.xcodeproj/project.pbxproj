@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263F4F8A26628DE500C1DE20 /* ViewBuyersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F4F8926628DE500C1DE20 /* ViewBuyersCell.swift */; };
+		264A72FA2653550700250EF0 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A72F92653550700250EF0 /* ListingCell.swift */; };
+		265433E8264A1CB000DA3BE1 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433E7264A1CB000DA3BE1 /* ListingsViewController.swift */; };
+		265433EA264A1D5500DA3BE1 /* ManageListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433E9264A1D5500DA3BE1 /* ManageListingViewController.swift */; };
+		265433EC264A1E2C00DA3BE1 /* ViewBuyersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433EB264A1E2C00DA3BE1 /* ViewBuyersViewController.swift */; };
+		265433EE264A1E7B00DA3BE1 /* NotifyBuyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433ED264A1E7B00DA3BE1 /* NotifyBuyerViewController.swift */; };
+		265433F0264A1ED000DA3BE1 /* ConfirmPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433EF264A1ED000DA3BE1 /* ConfirmPostViewController.swift */; };
+		265433F2264A1F4F00DA3BE1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265433F1264A1F4F00DA3BE1 /* ProfileViewController.swift */; };
+		26C8B5DE2640F17F0093E83A /* SellerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8B5DD2640F17F0093E83A /* SellerLoginViewController.swift */; };
+		26C8B5E02640F5DE0093E83A /* NewListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8B5DF2640F5DE0093E83A /* NewListingViewController.swift */; };
 		74DC19B32634A05F00F0D79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B22634A05F00F0D79E /* AppDelegate.swift */; };
 		74DC19B52634A05F00F0D79E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B42634A05F00F0D79E /* SceneDelegate.swift */; };
-		74DC19B72634A05F00F0D79E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC19B62634A05F00F0D79E /* ViewController.swift */; };
 		74DC19BA2634A05F00F0D79E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74DC19B82634A05F00F0D79E /* Main.storyboard */; };
 		74DC19BC2634A06100F0D79E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74DC19BB2634A06100F0D79E /* Assets.xcassets */; };
 		74DC19BF2634A06100F0D79E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74DC19BD2634A06100F0D79E /* LaunchScreen.storyboard */; };
@@ -36,10 +45,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		263F4F8926628DE500C1DE20 /* ViewBuyersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuyersCell.swift; sourceTree = "<group>"; };
+		264A72F92653550700250EF0 /* ListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
+		265433E7264A1CB000DA3BE1 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
+		265433E9264A1D5500DA3BE1 /* ManageListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageListingViewController.swift; sourceTree = "<group>"; };
+		265433EB264A1E2C00DA3BE1 /* ViewBuyersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuyersViewController.swift; sourceTree = "<group>"; };
+		265433ED264A1E7B00DA3BE1 /* NotifyBuyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyBuyerViewController.swift; sourceTree = "<group>"; };
+		265433EF264A1ED000DA3BE1 /* ConfirmPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPostViewController.swift; sourceTree = "<group>"; };
+		265433F1264A1F4F00DA3BE1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		26C8B5DD2640F17F0093E83A /* SellerLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerLoginViewController.swift; sourceTree = "<group>"; };
+		26C8B5DF2640F5DE0093E83A /* NewListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListingViewController.swift; sourceTree = "<group>"; };
 		74DC19AF2634A05F00F0D79E /* sp21-cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sp21-cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DC19B22634A05F00F0D79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74DC19B42634A05F00F0D79E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74DC19B62634A05F00F0D79E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74DC19B92634A05F00F0D79E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74DC19BB2634A06100F0D79E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74DC19BE2634A06100F0D79E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,13 +124,22 @@
 			children = (
 				74DC19B22634A05F00F0D79E /* AppDelegate.swift */,
 				74DC19B42634A05F00F0D79E /* SceneDelegate.swift */,
-				74DC19B62634A05F00F0D79E /* ViewController.swift */,
+				26C8B5DD2640F17F0093E83A /* SellerLoginViewController.swift */,
+				265433E7264A1CB000DA3BE1 /* ListingsViewController.swift */,
+				264A72F92653550700250EF0 /* ListingCell.swift */,
+				26C8B5DF2640F5DE0093E83A /* NewListingViewController.swift */,
+				265433EF264A1ED000DA3BE1 /* ConfirmPostViewController.swift */,
+				265433E9264A1D5500DA3BE1 /* ManageListingViewController.swift */,
+				265433EB264A1E2C00DA3BE1 /* ViewBuyersViewController.swift */,
+				263F4F8926628DE500C1DE20 /* ViewBuyersCell.swift */,
+				265433ED264A1E7B00DA3BE1 /* NotifyBuyerViewController.swift */,
 				74DC19B82634A05F00F0D79E /* Main.storyboard */,
 				74DC19E72634A2A000F0D79E /* sp21-cat.m */,
 				74DC19BB2634A06100F0D79E /* Assets.xcassets */,
 				74DC19BD2634A06100F0D79E /* LaunchScreen.storyboard */,
 				74DC19C02634A06100F0D79E /* Info.plist */,
 				74DC19E62634A2A000F0D79E /* sp21-cat-Bridging-Header.h */,
+				265433F1264A1F4F00DA3BE1 /* ProfileViewController.swift */,
 			);
 			path = "sp21-cat";
 			sourceTree = "<group>";
@@ -266,9 +293,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C8B5E02640F5DE0093E83A /* NewListingViewController.swift in Sources */,
+				265433F0264A1ED000DA3BE1 /* ConfirmPostViewController.swift in Sources */,
+				263F4F8A26628DE500C1DE20 /* ViewBuyersCell.swift in Sources */,
 				74DC19E82634A2A000F0D79E /* sp21-cat.m in Sources */,
-				74DC19B72634A05F00F0D79E /* ViewController.swift in Sources */,
+				265433EA264A1D5500DA3BE1 /* ManageListingViewController.swift in Sources */,
 				74DC19B32634A05F00F0D79E /* AppDelegate.swift in Sources */,
+				265433E8264A1CB000DA3BE1 /* ListingsViewController.swift in Sources */,
+				264A72FA2653550700250EF0 /* ListingCell.swift in Sources */,
+				265433F2264A1F4F00DA3BE1 /* ProfileViewController.swift in Sources */,
+				265433EC264A1E2C00DA3BE1 /* ViewBuyersViewController.swift in Sources */,
+				265433EE264A1E7B00DA3BE1 /* NotifyBuyerViewController.swift in Sources */,
+				26C8B5DE2640F17F0093E83A /* SellerLoginViewController.swift in Sources */,
 				74DC19B52634A05F00F0D79E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
