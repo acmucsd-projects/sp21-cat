@@ -29,10 +29,10 @@ const ListingSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        /*images: {
-            type: [String],
-            required: false,
-        },*/
+        image: {
+            filename: String,
+            data: Buffer,
+        },
         bids: [{
             type: ObjectId,
             ref: 'Bid',

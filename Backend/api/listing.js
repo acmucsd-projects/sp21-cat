@@ -1,6 +1,23 @@
 const express = require('express');
+const router = express.Router();
+
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
+ 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, new Date().toISOString() + '-' + file.originalname)
+    }
+});
+const upload = multer({ storage: storage });
+
 const Listing = require('../models/listing');
 const User = require('../models/user');
+
 const router = express.Router();
 const multer  = require('multer');
 const upload = multer({ dest: 'uploads/' });
@@ -62,7 +79,6 @@ router.get('/category/:category_name', async (req, res) => {
 });
 
 router.post('/', upload.single('image'), async (req, res) => {
-    console.log(req.body);
     const { item_name, seller_id, price, highest_bid, description, categories } = req.body;
     const listing = { item_name, seller_id, price, highest_bid, description, categories };
 
@@ -71,27 +87,19 @@ router.post('/', upload.single('image'), async (req, res) => {
     }
 
     const newListing = await Listing.create(listing);
-    return res.status(200).json({ newListing });
-
-    // req.file --> has file 
-    // frontend sends request with multi part form data as content type
-    // multer parses form data into req.file
-    // backend implements uploading file into aws s3 and getting url
-    // store url in listing
-    // all this done before creating listing
-    
+    if (req.file) {
+        //newListing.image = req.file.path;
+        newListing.image.filename = req.file.filename;
+        newListing.image.data = fs.readFileSync(path.join('uploads/' + req.file.filename));
+        newListing.save();
+    }
+    return res.status(200).json({ newListing });    
 });
 
-router.put('/:listing_id', async (req, res) => {
+router.put('/:listing_id', upload.single('image'), async (req, res) => {
     const { listing_id } = req.params;
     if (!listing_id) {
         return res.status(400).json({ error: 'Invalid parameter' });
-    }
-
-    const { item_name, seller_id, price, highest_bid, description, categories } = req.body;
-
-    if (!item_name || !seller_id || !price || !highest_bid || !description) {
-        return res.status(400).json({ error: 'Invalid input' });
     }
 
     const existingListing = await Listing.findById(req.params.listing_id);
@@ -99,12 +107,16 @@ router.put('/:listing_id', async (req, res) => {
         return res.status(400).json({ error: 'Listing does not exist' });
     }
 
-    existingListing.item_name = item_name;
-    existingListing.seller_id = seller_id;
-    existingListing.price = price;
-    existingListing.highest_bid = highest_bid;
-    existingListing.description = description;
-    existingListing.categories = categories;
+    if (req.body.item_name)   existingListing.item_name = req.body.item_name;
+    if (req.body.seller_id)   existingListing.seller_id = req.body.seller_id;
+    if (req.body.price)       existingListing.price = req.body.price;
+    if (req.body.highest_bid) existingListing.highest_bid = req.body.highest_bid;
+    if (req.body.description) existingListing.description = req.body.description;
+    if (req.body.categories)  existingListing.categories = req.body.categories;
+    if (req.file) {
+        existingListing.image.filename = req.file.filename;
+        existingListing.image.data = fs.readFileSync(path.join('uploads/' + req.file.filename));
+    }
     existingListing.save();
     return res.status(200).json({ message: 'Listing updated successfully' });
 });
