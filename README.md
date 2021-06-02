@@ -1,7 +1,7 @@
 ## Team Cat • Spring 2021
 Welcome to ACM Projects!
 
-This repository will store your code for the Winter 2021 project cycle. To get you started, we've linked to various resources below.
+This repository will store your code for the Spring 2021 project cycle. To get you started, we've linked to various resources below.
 
 ### Resources
 
