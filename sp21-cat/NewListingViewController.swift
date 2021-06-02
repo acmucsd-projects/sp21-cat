@@ -79,25 +79,7 @@ class NewListingViewController: UIViewController, UITextViewDelegate {
         guard let button = sender as? UIButton else {
             return
         }
-        
-//        switch button.tag {
-//            case 0:
-//                selected_cate = 0
-//            case 1:
-//                selected_cate = 1
-//            case 2:
-//                selected_cate = 2
-//            case 3:
-//                selected_cate = 3
-//            case 4:
-//                selected_cate = 4
-//            case 5:
-//                selected_cate = 5
-//            default:
-//                print("Unknown cate selection")
-//                return
-//        }
-        
+            
         num_cateBtns[selected_cate]?.backgroundColor = default_btn_color
         selected_cate = button.tag
         button.backgroundColor = selected_btn_color
@@ -105,6 +87,90 @@ class NewListingViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func postListing(_ sender: UIButton) {
+        // prepare json data
+        // "image": { "data": { "type", "data" }, "filename" }
+        // "seller_id": { "_id", "name" }
+        let image_name = "Teddy Bear Pic"
+        _ = UIImage(named: image_name)!.pngData()
+        let imageData = ["data": ["type": "PNG",
+                                  "data": ""],
+                         "filename": "Teddy Bear Pic"] as [String : Any]
+        let sellerData = ["_id": "404",
+                          "name": "Not Found"]
+        
+        let parameters: [String: Any] = ["newListing":
+                                                        ["categories": [cates[selected_cate]] as [String],
+                                                        "_id": "123", // Item id
+                                                        "item_name": itemName.text! as String,
+                                                        "seller_id": sellerData,
+                                                        "price": startingPrice.text! as String,
+                                                        "highest_bid": hideBid_switch.isOn,
+                                                        "description": item_description.text! as String,
+                                                        "bids": [],
+                                                        "__v": "",
+                                                        "image": imageData] as [String : Any]
+                                        ]
+
+        let valid = JSONSerialization.isValidJSONObject(imageData)
+        print("Parameter is VALID: \(valid)")
+        
+        // POST API call
+        //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
+
+        //create the url with URL
+        let post_endpoint:String = "http://localhost:3000/listing"
+        let url = URL(string: post_endpoint)! //change the url
+
+        //create the session object
+        let session = URLSession.shared
+
+        //now create the URLRequest object using the url object
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST" //set http method as POST
+
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
+        } catch let error {
+            print(error.localizedDescription)
+        }
+
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+        //create dataTask using the session object to send data to the server
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            guard error == nil else {
+                return
+            }
+            guard let data = data else {
+                return
+            }
+
+            do {
+                //create json object from data
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    print(json)
+                    // handle json...
+                    // Clear all inputs
+                    self.itemName.text = ""
+                    self.startingPrice.text = ""
+                    self.hideBid_switch.isOn = false
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+            }
+            let responseString = String(data: data, encoding: .utf8)
+            print(responseString!)
+        })
+        task.resume()
     }
     
     // MARK: - Navigation
@@ -117,15 +183,15 @@ class NewListingViewController: UIViewController, UITextViewDelegate {
 ////            { "newListing": { "categories", "_id", "item_name", "seller_id", "price", "highest_bid", "description", "bids", "__v" } }
 //
 //            // prepare json data
-//            let json: [String: Any] = ["categories": cates[selected_cate] as String,
-//                                       "_id": "",
+//            let json: [String: Any] = ["categories": [cates[selected_cate]] as [String],
+//                                       "_id": "123",
 //                                       "item_name": itemName.text! as String,
-//                                        "seller_id": "",
+//                                        "seller_id": "404",
 //                                        "price": startingPrice.text! as String,
 //                                        "highest_bid": hideBid_switch.isOn,
 //                                        "description": item_description.text! as String,
 //                                        "bids": [],
-//                                        "__v": ""] as [String : Any]
+//                                        "__v": "1"] as [String : Any]
 //
 //            let jsonData = try? JSONSerialization.data(withJSONObject: json)
 //            //Make API post request

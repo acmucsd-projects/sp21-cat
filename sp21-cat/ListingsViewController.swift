@@ -24,6 +24,7 @@ class ListingsViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.delegate = self
                 
         self.tabBarController?.tabBar.items![0].title = "My Listings"
+        
         // Do any additional setup after loading the view.
         let url = URL(string: "http://localhost:3000/listing")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -36,7 +37,7 @@ class ListingsViewController: UIViewController, UICollectionViewDelegate, UIColl
             let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
             // TODO: Get listings
-            self.listings = dataDictionary["listing"] as! [[String:Any]]
+            self.listings = dataDictionary["listings"] as! [[String:Any]]
             print("Number of listings: \(self.listings.count)")
             
             // TODO: Reload your table view data
@@ -68,7 +69,8 @@ class ListingsViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.manage_btn.tag = indexPath.item
         cell.viewBuyers_btn.tag = indexPath.item
         cell.item_name.text = listing["item_name"] as? String
-        cell.item_price.text = listing["price"] as? String
+        cell.item_price.text = "$" + (listing["price"] as? String)!
+        cell.item_img.image = UIImage(named: "Teddy Bear Pic")
         return cell
     }
 
