@@ -1,0 +1,35 @@
+{
+  "name": "sp21-cat",
+  "version": "1.0.0",
+  "description": "Welcome to ACM Projects!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acmucsd-projects/sp21-cat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acmucsd-projects/sp21-cat/issues"
+  },
+  "homepage": "https://github.com/acmucsd-projects/sp21-cat#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "date-and-time": "^1.0.0",
+    "dotenv": "^9.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "gridfs-stream": "^1.1.1",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
+    "nodemon": "^2.0.7"
+  }
+}
