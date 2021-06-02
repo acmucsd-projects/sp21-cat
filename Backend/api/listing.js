@@ -18,6 +18,10 @@ const upload = multer({ storage: storage });
 const Listing = require('../models/listing');
 const User = require('../models/user');
 
+const router = express.Router();
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
 router.get('/', async (req, res) => {
     const listing = await Listing.find().populate({ path: 'seller_id', select: [ 'name' ] }).populate('bids').exec();
     return res.status(200).json({ listing });
@@ -97,7 +101,7 @@ router.put('/:listing_id', upload.single('image'), async (req, res) => {
     if (!listing_id) {
         return res.status(400).json({ error: 'Invalid parameter' });
     }
-    
+
     const existingListing = await Listing.findById(req.params.listing_id);
     if (!existingListing) {
         return res.status(400).json({ error: 'Listing does not exist' });
