@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const multer  = require('multer');
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
+ 
 const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, './uploads');
+    destination: (req, file, cb) => {
+        cb(null, 'uploads')
     },
-    filename: function(req, file, cb) {
-        cb(null, new Date().toISOString() + '-' + file.originalname);
+    filename: (req, file, cb) => {
+        cb(null, new Date().toISOString() + '-' + file.originalname)
     }
 });
 const upload = multer({ storage: storage });
@@ -81,7 +84,9 @@ router.post('/', upload.single('image'), async (req, res) => {
 
     const newListing = await Listing.create(listing);
     if (req.file) {
-        newListing.image = req.file.path;
+        //newListing.image = req.file.path;
+        newListing.image.filename = req.file.filename;
+        newListing.image.data = fs.readFileSync(path.join('uploads/' + req.file.filename));
         newListing.save();
     }
     return res.status(200).json({ newListing });    
@@ -104,7 +109,10 @@ router.put('/:listing_id', upload.single('image'), async (req, res) => {
     if (req.body.highest_bid) existingListing.highest_bid = req.body.highest_bid;
     if (req.body.description) existingListing.description = req.body.description;
     if (req.body.categories)  existingListing.categories = req.body.categories;
-    if (req.file)             existingListing.image = req.file.path;
+    if (req.file) {
+        existingListing.image.filename = req.file.filename;
+        existingListing.image.data = fs.readFileSync(path.join('uploads/' + req.file.filename));
+    }
     existingListing.save();
     return res.status(200).json({ message: 'Listing updated successfully' });
 });

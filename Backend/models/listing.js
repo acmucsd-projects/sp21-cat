@@ -30,7 +30,8 @@ const ListingSchema = new mongoose.Schema(
             required: true,
         },
         image: {
-            type: String,
+            filename: String,
+            data: Buffer,
         },
         bids: [{
             type: ObjectId,

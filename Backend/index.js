@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const config = require('./config');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -17,6 +18,10 @@ server.use('/uploads', express.static('uploads'));
 server.use('/listing', listingRouter);
 server.use('/user', userRouter);
 server.use('/bid', bidRouter);
+
+server.use(bodyParser.urlencoded({ extended: false }))
+server.use(bodyParser.json())
+server.set("view engine", "ejs");
 
 mongoose.connect(config.databaseUrl, {
     useNewUrlParser: true,

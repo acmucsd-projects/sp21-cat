@@ -20,6 +20,7 @@
   "homepage": "https://github.com/acmucsd-projects/sp21-cat#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "date-and-time": "^1.0.0",
     "dotenv": "^9.0.1",
