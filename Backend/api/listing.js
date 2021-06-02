@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
         cb(null, new Date().toISOString() + '-' + file.originalname)
     }
 });
-const upload = multer({ storage: storage });
+const upload = multer({ storage: storage, dest: 'uploads/' });
 
 const Listing = require('../models/listing');
 const User = require('../models/user');
